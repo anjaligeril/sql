@@ -21,7 +21,6 @@ category varchar(20) not null,
 nationality varchar(25) not null,
 special_needs varchar(50) null,
 current_status varchar(20) not null,
-course_id varchar(20) not null,
 comment_for_student varchar(100) ,
 status_accomodation varchar(25) not null,
 type_of_room varchar(20) null,
@@ -33,39 +32,42 @@ check (status_accomodation='renting' or status_accomodation='waiting list'),
 check(type_of_room='hall of residence' or type_of_room='student flat')
 );
 
+drop table university_student;
+
+select * from university_student;
 
 --insertion of data into university student table
 
 insert into university_student values('','','','','','','','','','','','','','','','','','','',);
 
-insert into university_student values('s1','ann','mathew','56 leander st','brampton','l6s3m7','02/09/1989','female','junoir','canadian','no','placed','c2','from brampton','waiting list','hall of residence','ad2','p1','co1');
+insert into university_student values('s1','ann','mathew','56 leander st','brampton','l6s3m7','02/09/1989','female','junoir','canadian','no','placed','from brampton','waiting list','hall of residence','ad2','p1','co1');
 
 
-insert into university_student values('s2','','','','','','','','','','','','','','','','','','');
+insert into university_student values('s2','anu','george','1 newton st','london','m2h3m5','03/02/2001','male','sophomore','indian','yes','waiting','from london','renting','student flat','ad1','f1','co2');
 
 
-insert into university_student values('s3','','','','','','','','','','','','','','','','','','');
+insert into university_student values('s3','binu','jose','2 queen st','toronto','l3l4l5','06/05/2004','male','senior','american','no','placed','from toronto','waiting list','student flat','ad3','f1','co3');
 
 
-insert into university_student values('s4','','','','','','','','','','','','','','','','','','');
+insert into university_student values('s4','amy','george','56 newton st','halifax','k5k6k7','02/12/1992','female','junior','canadian','no','waiting','from halifax','renting','hall of residence','ad3','p3','co4');
 
 
-insert into university_student values('s5','','','','','','','','','','','','','','','','','','');
+insert into university_student values('s5','manu','k','126 mount st','kitchner','g1g2g3','02/08/2000','male','sophomore','chinese','yes','placed','from kitchner','renting','student flat','ad4','f2','co5');
 
 
-insert into university_student values('s6','','','','','','','','','','','','','','','','','','');
+insert into university_student values('s6','soha','m','126 queen st','alberta','p1p2n3r','06/02/2002','female','junior','israel','no','waiting','from  alberta','waiting list','hall of residence','ad5','p2','co6');
 
 
-insert into university_student values('s7','','','','','','','','','','','','','','','','','','');
+insert into university_student values('s7','amrit','k','55 dixie st','ottawa','k1k2f3c','01/03/2002','female','senior','indian','no','placed','from ottawa','renting','student flat','ad6','f4','co7');
 
 
-insert into university_student values('s8','','','','','','','','','','','','','','','','','','');
+insert into university_student values('s8','navjeeb','singh','23 william st','toronto','j2h3g4','8/6/1984','female','sophomore','indian','no','placed','from toronto','waiting list','student flat','ad6','f5','co8');
 
 
-insert into university_student values('s9','','','','','','','','','','','','','','','','','','');
+insert into university_student values('s9','queen','w','45 kenndedy st ','scarbarough','l2l3l4','03/05/2003','female','senior','uk','yes','waiting','from uk','renting','hall of residence','ad7','p4','co9');
 
 
-insert into university_student values('s10','','','','','','','','','','','','','','','','','','');
+insert into university_student values('s10','zain','malik','34 lanet st','brampton','l6q3f4','01/08/2004','male','junior','canadian','no','placed','from brampton','renting','student flat','ad8','f5','co10');
 
 
 --advisor table

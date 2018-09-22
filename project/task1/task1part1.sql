@@ -58,6 +58,8 @@ select * from usa_states where state_area<60000 and  state_population>10000000;
 
 --task1 question 3
 
-select * from usa_states order by state_population;
+create view population_sort  as select * from usa_states;
+
+select * from population_sort order by state_population;
 
 drop table usa_states;
