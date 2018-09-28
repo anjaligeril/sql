@@ -12,46 +12,51 @@ select * from products;
 
 --2.	Once you have finished this, create a query that displays :CompanyName, Address, of the customer along with the total for each order that the customer has made. Save this query as a sql script called Question2.sql to your desktop
 
-select customers.CompanyName, customers.address from Customers inner join orders on customers.CustomerID=orders.CustomerID ;
+	select customers.CompanyName, customers.address,count(orders.orderId) from Customers inner join orders on customers.CustomerID=orders.CustomerID group by Customers.companyname,Customers.Address;
 
-select count(customerid)as total_no_of_orders from orders group by customerid;
+	select count(customerid)as total_no_of_orders from orders group by customerid;
 
-select Customers.CompanyName,Customers.Address,count(orders.CustomerID) as total_no_of_orders 
-from Customers  
-inner join Orders  on Customers.CustomerID=Orders.CustomerID 
-group by Orders.CustomerID  ;
-
-
-
+	
 --3.	Create a View that joins the customers table to the orders table and have the view show CompanyName, Address, City and OrderDate. Save the View as CustomersView.
 
 
-create view Customersview as 
-select Customers.CompanyName,Customers.Address,Customers.City,Orders.OrderDate from Customers inner join Orders on Customers.CustomerID=Orders.CustomerID;
+	create view Customersview as select Customers.CompanyName,Customers.Address,Customers.City,Orders.OrderDate from Customers inner join Orders on Customers.CustomerID=Orders.CustomerID;
 
-select * from Customersview;
+	select * from Customersview;
 
 --4.	Once the CustomersView is created query the view to show only Customers from London.
 
 
-select * from CustomersView where CustomersView.City='London';
+	select * from CustomersView where CustomersView.City='London';
 
 
 --5. Create a stored procedure will return a list of products based on the parameter values that you pass to stored procedure. Save the stored procedure as ProductSearch.
 
 
-create procedure sp_ProductSearch @categoryid_by_user varchar(50) as 
-select * from Products where CategoryID=@categoryid_by_user;
+	create procedure sp_ProductSearch @categoryid_by_user varchar(50) as  select * from Products where CategoryID=@categoryid_by_user;
 
-exec sp_ProductSearch @categoryid_by_user='1';
+	exec sp_ProductSearch @categoryid_by_user='1';
 
 
 
 --7 Create a nonclustered index on the primary key for the Customers Table and Create a clustered index on the CompanyName field of the Customers table.
 
-select * from Customers;
+	select * from Customers;
 
-create nonclustered index ix_CustomerID on Customers (CustomerID);
+	create nonclustered index ix_CustomerID on Customers (CustomerID);
 
-create clustered index ix_CompanyName on Customers(CompanyName);
+	create clustered index ix_CompanyName on Customers(CompanyName);
 
+--8. Provide a list of suitable fields that you could implement full text searching on.
+
+	--Customers
+
+	--CompanyName,ContactName,ContactTitle,Address
+
+	--Orders
+
+	--ShipName,ShipAddress
+
+	--Products
+
+	--ProductName

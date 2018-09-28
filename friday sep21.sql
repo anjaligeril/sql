@@ -72,3 +72,30 @@ select student1.stu_name,student1.addr,advisor.name,advisor.dept_name  from advi
 select * from stu_adv;
 
 select * from stu_adv where stu_name='john';
+
+
+use learningsql;
+
+--trigger
+
+insert into employee values(24,'smith','john','d7');
+
+
+create trigger trg_employee on employee after 
+insert as
+begin
+print 'thank you'
+end;
+
+create trigger trg_restrict_employee on employee instead of
+insert as
+begin
+print 'you cant do insert'
+end;
+
+create trigger trg_restrict_employee1 on employee instead of
+insert as
+begin
+raiserror('you cant do insert',16,1);
+rollback
+end;
