@@ -1,0 +1,184 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang4105{\fonttbl{\f0\fnil Consolas;}{\f1\fnil\fcharset0 Consolas;}{\f2\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;\red0\green128\blue128;\red128\green128\blue128;\red0\green128\blue0;\red255\green0\blue0;\red255\green0\blue255;}
+{\*\generator Riched20 10.0.10240}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\cf1\f0\fs19\lang9\par
+\f1\lang4105 --SQL Exam \f0\lang9\par
+\par
+use\cf0  \cf2 pubs\cf3 ;\cf0\par
+\par
+\cf4 --Question 2\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 authors\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf2 authors\cf3 .\cf2 au_fname\cf3 ,\cf2 authors\cf3 .\cf2 au_lname\cf3 ,\cf2 authors\cf3 .\cf1 address\cf3 ,\cf2 authors\cf3 .\cf2 phone\cf0  \cf1 from\cf0  \cf2 authors\cf0  \cf1 where\cf0  \cf1 state\cf3 =\cf5 'CA'\cf3 ;\cf0\par
+\par
+\cf4 --Question 2b\cf0\par
+\par
+\cf1 create\cf0  \cf1 view\cf0  \cf2 authorsView\cf0  \cf1 as\cf0\par
+\cf1 select\cf0  \cf2 authors\cf3 .\cf2 au_fname\cf3 ,\cf2 authors\cf3 .\cf2 au_lname\cf3 ,\cf2 authors\cf3 .\cf1 address\cf3 ,\cf2 authors\cf3 .\cf2 phone\cf0  \cf1 from\cf0  \cf2 authors\cf0  \cf1 where\cf0  \cf1 state\cf3 =\cf5 'CA'\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 authorsView\cf3 ;\cf0\par
+\par
+\cf4 --Question 3\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 titles\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf6 count\cf3 (*)\cf1 as\cf0  \cf2 no_of_records\cf0  \cf1 from\cf0  \cf2 titles\cf3 ;\cf0\par
+\par
+\cf1 create\cf0  \cf1 view\cf0  \cf2 Recordcount\cf0  \cf1 as\cf0\par
+\cf1 select\cf0  \cf6 count\cf3 (*)\cf1 as\cf0  \cf2 no_of_records\cf0  \cf1 from\cf0  \cf2 titles\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 Recordcount\cf3 ;\par
+\par
+\cf4 --Question 4\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 authors\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 titleauthor\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 titles\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 authors\cf0  \cf2 a\cf0  \cf3 inner\cf0  \cf3 join\cf0  \cf2 titleauthor\cf0  \cf2 ta\cf0  \cf1 on\cf0  \cf2 a\cf3 .\cf2 au_id\cf3 =\cf2 ta\cf3 .\cf2 au_id\cf0  \cf3 inner\cf0  \cf3 join\cf0  \cf2 titles\cf0  \cf2 t\cf0  \cf1 on\cf0  \cf2 ta\cf3 .\cf2 title_id\cf3 =\cf2 t\cf3 .\cf2 title_id\cf3 ;\par
+\cf0\par
+\cf4 --Question 5\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 authors\cf0  \cf2 a\cf0  \cf3 inner\cf0  \cf3 join\cf0  \cf2 titleauthor\cf0  \cf2 ta\cf0  \cf1 on\cf0  \cf2 a\cf3 .\cf2 au_id\cf3 =\cf2 ta\cf3 .\cf2 au_id\cf0  \cf3 inner\cf0  \cf3 join\cf0  \cf2 titles\cf0  \cf2 t\cf0  \cf1 on\cf0  \cf2 ta\cf3 .\cf2 title_id\cf3 =\cf2 t\cf3 .\cf2 title_id\cf0  \cf1 where\cf0  \cf1 state\cf3 =\cf5 'UT'\cf3 ;\cf0\par
+\par
+\cf4 --question 6 \cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 employee\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 publishers\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 employee\cf0  \cf2 e\cf0  \cf1 where\cf0  \cf2 e\cf3 .\cf2 pub_id\cf3 =(\cf1 select\cf0  \cf2 pub_id\cf0  \cf1 from\cf0  \cf2 publishers\cf0  \cf2 p\cf0  \cf1 where\cf0  \cf2 p\cf3 .\cf2 city\cf3 =\cf5 'washington'\cf3 );\par
+\cf0\par
+\cf4 --question 7\cf0\par
+\par
+\cf1 create\cf0  \cf1 trigger\cf0  \cf2 trg_nodropdatabase\cf0  \par
+\cf1 on\cf0  \cf3 all\cf0  \cf1 server\cf0\par
+\cf1 for\cf0  \cf2 drop_database\cf0\par
+\cf1 as\cf0\par
+\cf1 begin\cf0  \par
+\cf1 raiserror\cf3 (\cf5 'You cant delete database from the server'\cf3 ,\cf0 16\cf3 ,\cf0 1\cf3 );\cf0\par
+\cf1 end\cf3 ;\cf0\par
+\par
+\cf1 drop\cf0  \cf1 database\cf0  \cf2 books\cf3 ;\par
+\cf0\par
+\cf4 --Question 8\cf0\par
+\par
+\cf1 create\cf0  \cf1 trigger\cf0  \cf2 trg_salesdelete\cf0\par
+\cf1 on\cf0  \cf2 sales\cf0  \par
+\cf1 instead\cf0  \cf1 of\cf0  \cf1 delete\cf0  \par
+\cf1 as\cf0\par
+\cf1 begin\cf0  \par
+\cf1 raiserror\cf3 (\cf5 'you cant delete records from the sales table'\cf3 ,\cf0 16\cf3 ,\cf0 1\cf3 )\cf0\par
+\cf1 rollback\cf0\par
+\cf1 end\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 sales\cf3 ;\cf0\par
+\par
+\cf1 delete\cf0  \cf1 from\cf0  \cf2 sales\cf0  \cf1 where\cf0  \cf2 stor_id\cf3 =\cf0 6380\cf3 ;\par
+\cf0\par
+\par
+\cf4 --Question 9\cf0\par
+\par
+\cf1 create\cf0  \cf1 procedure\cf0  \cf2 sp_multiply\cf0\par
+\cf2 @num1\cf0  \cf1 int\cf3 ,\cf0\par
+\cf2 @num2\cf0  \cf1 int\cf3 ,\cf0\par
+\cf2 @result\cf0  \cf1 int\cf0  \cf1 out\cf0\par
+\cf1 as\cf0\par
+\cf1 set\cf0  \cf2 @result\cf3 =\cf0  \cf2 @num1\cf3 *\cf2 @num2\cf3 ;\cf0\par
+\par
+\par
+\cf1 declare\cf0  \cf2 @value\cf0  \cf1 int\cf3 ;\cf0\par
+\cf1 exec\cf0  \cf2 sp_multiply\cf1  \cf0 2\cf3 ,\cf0 3\cf3 ,\cf2 @value\cf0  \cf1 out\cf3 ;\cf0\par
+\cf1 select\cf0  \cf2 @value\cf0  \cf1 as\cf0  \cf2 value_of_multiplication\cf3 ;\cf0\par
+\par
+\par
+\cf4 --Question 10\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 employee\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 publishers\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 employee\cf0  \cf2 e\cf0  \cf1 where\cf0  \cf2 e\cf3 .\cf2 pub_id\cf3 =(\cf1 select\cf0  \cf2 pub_id\cf0  \cf1 from\cf0  \cf2 publishers\cf0  \cf2 p\cf0  \cf1 where\cf0  \cf2 p\cf3 .\cf2 pub_name\cf3 =\cf5 'New moon Books'\cf0  \cf3 );\cf0\par
+\par
+\cf1 create\cf0  \cf1 function\cf0  \cf2 fn_employeelist\cf3 (\cf2 @pub_name\cf0  \cf1 varchar\cf3 (\cf0 40\cf3 ))\cf0\par
+\cf1 returns\cf0  \cf1 table\cf0\par
+\cf1 as\cf0\par
+\cf1 return\cf3 (\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 employee\cf0  \cf2 e\cf0  \cf1 where\cf0  \cf2 e\cf3 .\cf2 pub_id\cf3 =(\cf1 select\cf0  \cf2 pub_id\cf0  \cf1 from\cf0  \cf2 publishers\cf0  \cf2 p\cf0  \cf1 where\cf0  \cf2 p\cf3 .\cf2 pub_name\cf3 =\cf2 @pub_name\cf0  \cf3 ));\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 fn_employeelist\cf3 (\cf5 'Binnet & Hardley'\cf3 );\par
+\cf4 --question 11\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 authors\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf1 distinct\cf3 (\cf1 state\cf3 )\cf0  \cf1 from\cf0  \cf2 authors\cf0  \cf3 ;\cf0\par
+\par
+\cf4 --question 12\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 jobs\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf2 max_lvl\cf3 -\cf2 min_lvl\cf0  \cf1 from\cf0  \cf2 jobs\cf0  \cf1 where\cf0  \cf2 job_desc\cf3 =\cf5 'Marketing Manager'\cf3 ;\cf0\par
+\par
+\cf4 --question 13\par
+\cf0\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 employee\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 employee\cf0  \cf1 where\cf0  \cf6 datepart\cf3 (\cf6 year\cf3 ,\cf2 hire_date\cf3 )=\cf0 1989\cf3 ;\cf0\par
+\par
+\cf4 --question 14\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 employee\cf0  \cf2 e\cf0  \cf1 order\cf0  \cf1 by\cf0  \cf2 e\cf3 .\cf2 fname\cf3 ,\cf2 e\cf3 .\cf2 lname\cf0  \cf1 desc\cf3 ;\par
+\cf0\par
+\cf4 --question 15\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 employee\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 jobs\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf2 e\cf3 .\cf2 fname\cf0  \cf1 from\cf0  \cf2 employee\cf0  \cf2 e\cf0  \cf1 where\cf0  \cf2 e\cf3 .\cf2 job_id\cf3 =(\cf1 select\cf0  \cf2 job_id\cf0  \cf1 from\cf0  \cf2 jobs\cf0  \cf2 j\cf0  \cf1 where\cf0  \cf2 j\cf3 .\cf2 job_desc\cf3 =\cf5 'Designer'\cf3 );\cf0\par
+\par
+\cf4 --question 16\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 sales\cf3 ;\cf0\par
+\par
+\par
+\cf1 select\cf0  \cf2 ord_num\cf0  \cf3 ,\cf6 sum\cf3 (\cf2 qty\cf3 )\cf0  \cf1 as\cf0  \cf2 total_qty\cf0  \cf1 from\cf0  \cf2 sales\cf0  \cf2 s\cf0  \cf1 group\cf0  \cf1 by\cf0  \cf2 ord_num\cf3 ;\cf0\par
+\par
+\par
+\cf4 --question 17\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 discounts\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf6 avg\cf3 (\cf2 discount\cf3 )\cf0  \cf1 as\cf0  \cf2 average_discount\cf0  \cf1 from\cf0  \cf2 discounts\cf3 ;\cf0\par
+\par
+\cf4 --question 18 \cf0\par
+\par
+\par
+\cf1 Select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 authors\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 titleauthor\cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf2 a\cf3 .\cf2 au_fname\cf0  \cf1 from\cf0  \cf2 authors\cf0  \cf2 a\cf0  \cf3 inner\cf0  \cf3 join\cf0  \cf2 titleauthor\cf0  \cf2 ta\cf0  \cf1 on\cf0  \cf2 a\cf3 .\cf2 au_id\cf3 =\cf2 ta\cf3 .\cf2 au_id\cf0  \cf1 where\cf0  \cf2 ta\cf3 .\cf2 royaltyper\cf0  \cf3 in\cf1  \cf3 (\cf0 30\cf3 ,\cf0 40\cf3 ,\cf0 50\cf3 )\cf0  \cf3 ;\cf0\par
+\par
+\cf1 select\cf0  \cf2 a\cf3 .\cf2 au_fname\cf0  \cf1 from\cf0  \cf2 authors\cf0  \cf2 a\cf0  \cf1 where\cf0  \cf2 a\cf3 .\cf2 au_id\cf0  \cf3 in\cf1  \cf3 (\cf1 select\cf0  \cf2 ta\cf3 .\cf2 au_id\cf0  \cf1 from\cf0  \cf2 titleauthor\cf0  \cf2 ta\cf0  \cf1 where\cf0  \cf2 ta\cf3 .\cf2 royaltyper\cf0  \cf3 in\cf1  \cf3 (\cf0 30\cf3 ,\cf0 40\cf3 ,\cf0 50\cf3 ));\par
+\cf0\par
+\cf4 --question 19\cf0\par
+\par
+\cf1 select\cf0  \cf3 *\cf0  \cf1 from\cf0  \cf2 discounts\cf3 ;\cf0\par
+\par
+\cf1 create\cf0  \cf1 clustered\cf0  \cf1 index\cf0  \cf2 ix_discounttype\cf0  \cf1 on\cf0  \cf2 discounts\cf3 (\cf2 discounttype\cf0  \cf1 asc\cf3 );\cf0\par
+\par
+\cf4 --question 20\cf0\par
+\par
+\cf1 create\cf0  \cf1 nonclustered\cf0  \cf1 index\cf0  \cf2 ix_aufname\cf0  \cf1 on\cf0  \cf2 authors\cf3 (\cf2 au_fname\cf0  \cf1 asc\cf3 );\cf0\par
+\par
+\cf1 create\cf0  \cf1 nonclustered\cf0  \cf1 index\cf0  \cf2 ix_pubid\cf0  \cf1 on\cf0  \cf2 employee\cf3 (\cf2 pub_id\cf0  \cf1 asc\cf3 );\par
+\cf0\par
+\par
+\par
+\par
+\f2\fs22\par
+}
+ 
